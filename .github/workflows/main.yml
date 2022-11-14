@@ -10,11 +10,11 @@ jobs:
   main:
     runs-on: macos-latest
     steps:
-      - uses: fwal/setup-swift@v1.14.0
+      - uses: swift-actions/setup-swift@v1.19.0
         with:
           swift-version: "5.6.0"
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
         with:
           path: .build
           key: ${{ runner.os }}-PasscodeField-${{ hashFiles('**/Package.resolved') }}
