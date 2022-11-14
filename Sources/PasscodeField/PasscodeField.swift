@@ -128,11 +128,11 @@ public struct PasscodeField<Label>: View where Label: View {
 
 @available(iOS 13.0, macCatalyst 13.0, tvOS 14.0, macOS 11.0, *)
 extension PasscodeField where Label == Text {
-    public init<S>(
-        _ title: S,
+    public init(
+        _ title: some StringProtocol,
         maxDigits: Int = 4,
         action: @escaping (DigitGroup, (Bool) -> Void) -> Void
-    ) where S: StringProtocol {
+    ) {
         self.init(maxDigits: maxDigits, action: action) {
             Text(title)
                 .font(.title)
