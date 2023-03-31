@@ -1,21 +1,32 @@
 # PasscodeField
 
-A SwiftUI library which provides a passcode field.
+![](https://img.shields.io/badge/iOS-13.0%2B-green)
+![](https://img.shields.io/badge/tvOS-14.0%2B-green)
+![](https://img.shields.io/badge/macOS-11.0%2B-green)
+![](https://img.shields.io/badge/Swift-5-orange?logo=Swift&logoColor=white)
+![](https://img.shields.io/github/last-commit/hengyu/PasscodeField)
 
-## Features
+<img width=320 src="preview.png"/>
 
+**PasscodeField** provides a passcode field written in SwiftUI.
 1. Digit length is customizable;
 2. Digit box style is customizable;
-3. Support for hide/unhide digits;
-4. Available on iOS, tvOS and macOS.
+3. Support for hide/unhide digits.
 
-## Core Ideas
+## Table of contents
 
-To provide the system input keyboard to user when they interacting the `PasscodeField`, we use a system text field as the receiver while making it visually invisible. When user is about to input digits, we first make the text field as the first responder. At this time, the system keyboard will show. Then we listen to the input event, when any input arrives, we validate the input and then update the state of the `PasscodeField` (e.g., set a gray background on the digit box to indicate user they have added one digit). Also, we listen to the text deletion event, and update the `PasscodeField` correspondingly.
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Core Ideas](#core-ideas)
+* [License](#license)
 
-## Usages
+## Requirements
 
-`PasscodeField` could be installed via [Swift Package Manager](https://www.swift.org/package-manager/). Open Xcode and go to **File** -> **Add Packages...**, search `https://github.com/hengyu/PasscodeField.git`, and add the package as one of your project's dependency.
+- iOS 13.0+, tvOS 14.0+, macOS 11.0+
+- SwiftUI
+
+## Usage
 
 In the Swift file you want to use, just import the package and then:
 
@@ -62,10 +73,21 @@ PasscodeField { digits, action in
 )
 ```
 
-## Screenshots
+## Installation
 
-<img width=320 src="preview.png"/>
+### Swift Package Manager
+
+[PasscodeField](https://github.com/hengyu/PasscodeField.git) could be installed via [Swift Package Manager](https://www.swift.org/package-manager/). Open Xcode and go to **File** -> **Add Packages...**, search `https://github.com/hengyu/PasscodeField.git`, and add the package as one of your project's dependency.
+
+### Manual
+
+1. Download code from [GitHub](https://github.com/hengyu/PasscodeField);
+2. Drag & drop the `Sources` folder into your project.
+
+## Core Ideas
+
+To provide the system input keyboard to user when they interacting the `PasscodeField`, we use a system text field as the receiver while making it visually invisible. When user is about to input digits, we first make the text field as the first responder. At this time, the system keyboard will show. Then we listen to the input event, when any input arrives, we validate the input and then update the state of the `PasscodeField` (e.g., set a gray background on the digit box to indicate user they have added one digit). Also, we listen to the text deletion event, and update the `PasscodeField` correspondingly.
 
 ## License
 
-`PasscodeField` is licensed under [MIT License](LICENSE).
+**PasscodeField** is available under the [MIT License](LICENSE).
